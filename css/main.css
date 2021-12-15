@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+}
+
+body {
+  background-color: #4A4A4A;
+  font-family: 'Oswald', sans-serif;
+}
+
+body #bgimg {
+  background-image: url("../images/cinema.jpg");
+  background-size: cover;
+  mix-blend-mode: color-dodge;
+  z-index: -10;
+}
+
+body .navigation {
+  background-color: #3e3e3e;
+  position: absolute;
+  z-index: 20;
+}
+
+body .navigation #logo span {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body .navigation #logo span.GrayText {
+  color: #838383;
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+body .navigation #logo span.RedText {
+  color: #FF375B;
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+body .navigation .nav-links {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+body .navigation .nav-links ul {
+  list-style: none;
+}
+
+body .navigation .nav-links ul li {
+  float: left;
+}
+
+body .navigation .nav-links ul li a {
+  display: block;
+  font-size: 2rem;
+  text-decoration: none;
+  color: white;
+}
+
+body .navigation .nav-links ul li a.CTA {
+  background-color: #FF375B;
+  border-radius: 5px;
+  padding: .25rem 2rem;
+}
+/*# sourceMappingURL=main.css.map */
