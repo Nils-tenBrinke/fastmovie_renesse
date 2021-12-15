@@ -42,6 +42,24 @@ body .navigation #logo span.RedText {
   font-weight: 700;
 }
 
+body .navigation .search-bar {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: 2rem;
+}
+
+body .navigation .search-bar input {
+  border-radius: 5px;
+}
+
+body .navigation .search-bar .cta {
+  background-color: #838383;
+  padding: 0 1rem;
+  color: white;
+  text-transform: uppercase;
+}
+
 body .navigation .nav-links {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;

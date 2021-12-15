@@ -1,20 +1,28 @@
 <?php
 class MovieController{
-
     
-    // private $con;
-    // public function __construct($host,$dbnaam,$gebruiker,$wachtwoord){
-        //     $con = new PDO("mysql:host=$host;dbname=$dbnaam;",$gebruiker,$wachtwoord);
-        //     $this->con = $con;
-        // }
+    private $tmdb;
+    private $con;
+    public function __construct($host,$dbnaam,$gebruiker,$wachtwoord){
+            $con = new PDO("mysql:host=$host;dbname=$dbnaam;",$gebruiker,$wachtwoord);
+            $this->con = $con;
+            //API implementeren en de waardes publiek stellen.
+            include("./php/tmdb_api/tmdb-api.php");
+            $apikey = "d3e3162392009d2e4475cde410afc226";
+            $this->tmdb = new TMDB($apikey, 'en', true);
+        }
         
     function SearchMovie($MovieName){
-        // $MovieName = $MovieName;
-    
-        $movies = $tmdb->searchMovie($MovieName);
+        $MovieName = $MovieName;
+        $movies = $this->tmdb->searchMovie($MovieName);
+        return $movies;
+    }
+
+    function ShowMovies($movies){
+        $movies = $movies;
         foreach($movies as $movie){
-            echo '<li>'. $movie->getTitle() .' (<a href="https://www.themoviedb.org/movie/'. $movie->getID() .'">'. $movie->getID() .'</a>)</li>';
-            echo '<img src="'. $tmdb->getImageURL('w185') . $movie->getPoster() . '"/>';
+            echo $movie->getTitle() .' (<a href="https://www.themoviedb.org/movie/'. $movie->getID() .'">'. $movie->getID() .'</a>)';
+            echo '<img src="'. $this->tmdb->getImageURL('w185') . $movie->getPoster() . '"/>';
         }
     }
 }

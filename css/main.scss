@@ -39,6 +39,23 @@ body{
                 }
             }
         }
+        .search-bar{
+            align-self: center;
+            font-size: 2rem;
+            
+            input{
+                border-radius: 5px;
+
+            }
+
+            .cta{
+                background-color: #838383;
+                padding: 0 1rem;
+                color: white;
+                text-transform: uppercase;
+            }
+        }
+
         .nav-links{
             align-self: center;
             ul{

@@ -16,28 +16,24 @@
                 <span class="GrayText">FAST</span>
                 <span class="RedText">MOVIE</span>
             </a>
+            <form method="GET" class="search-bar">
+                <input class="w-96" type="text" name="txtSearchMovie">
+                <input type="submit" value="Zoeken" name="btnSearchMovie" class="cta">
+            </form>
+
+
+            <?php
+            require("./php/MovieController.php");
+            if(isset($_GET['btnSearchMovie'])){
+                $MovieName = $_GET['txtSearchMovie'];
+                header("Location:results.php?MovieName=$MovieName");
+            }
+            ?>
             <div class="nav-links">
                 <ul class="flex flex-row space-x-16">
                     <li><a href="#!">over ons</a></li>
                     <li><a href="#!">contact</a></li>
                     <li><a href="#!" class="CTA">TICKETS</a></li>
-                    <form method="POST">
-                        <input class="w-80" type="text" name="txtSearchMovie">
-                        <input type="submit" value="Zoeken" name="btnSearchMovie">
-                    </form>
-
-
-                    <?php
-                    include("./php/tmdb_api/tmdb-api.php");
-                    $apikey = "d3e3162392009d2e4475cde410afc226";
-                    $tmdb = new TMDB($apikey, 'en', true);
-                    require("./php/MovieController.php");
-                    if(isset($_POST['btnSearchMovie'])){
-                        $MovieName = $_POST['txtSearchMovie'];
-                        $MC = new MovieController();
-                        $MC->SearchMovie($MovieName);
-                    }
-                    ?>
                 </ul>
             </div>
         </div>
