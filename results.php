@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FastMovie Renesse | Search '<?= $_GET['MovieName']; ?>'</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -23,15 +24,16 @@
             </div>
         </div>
     </div>
-    <!-- <div class="h-screen" id="bgimg">test</div> -->
-    <div class="">
+    <div class="h-screen w-screen absolute" id="bgimg">
         <?php
         require("./php/MovieController.php");
         $MC = new MovieController("localhost","fastmovie_renesse","root","");
         $MovieName = $_GET['MovieName'];
         $movies = $MC->SearchMovie($MovieName);
-        $MC->ShowMovies($movies);
         ?>
+        <div class="flex flex-wrap justify-between gap-4 pt-28 w-3/4 mx-auto">
+            <?= $MC->ShowMovies($movies); ?>
+        </div>
     </div>
 </body>
 </html>

@@ -12,6 +12,7 @@ body{
     #bgimg{
         background-image: url("../images/cinema.jpg");
         background-size: cover;
+        background-attachment: fixed;
         mix-blend-mode: color-dodge;
         z-index: -10;
     }
