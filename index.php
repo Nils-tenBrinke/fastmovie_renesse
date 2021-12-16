@@ -16,7 +16,7 @@
                 <span class="GrayText">FAST</span>
                 <span class="RedText">MOVIE</span>
             </a>
-            <form method="GET" class="search-bar">
+            <form method="GET" class="search-bar" autocomplete="off">
                 <input class="w-96" type="text" name="txtSearchMovie">
                 <input type="submit" value="Zoeken" name="btnSearchMovie" class="cta">
             </form>
