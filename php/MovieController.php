@@ -24,6 +24,7 @@ class MovieController{
             ?>
             <div class="">
                 <a href="https://www.themoviedb.org/movie/<?= $movie->getID(); ?>"><img src="<?= $this->tmdb->getImageURL('w185') . $movie->getPoster();?>"/></a>
+
             </div>
             <?php
             // echo $movie->getTitle() .' (<a href="https://www.themoviedb.org/movie/'. $movie->getID() .'">'. $movie->getID() .'</a>)';

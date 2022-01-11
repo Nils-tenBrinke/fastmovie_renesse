@@ -38,6 +38,13 @@
             </div>
         </div>
     </div>
-    <div class="h-screen" id="bgimg">test</div>
+
+    <div class="flex w-3/4 mx-auto pt-56">
+        <div class="">
+            <span class="GrayText">FAST</span>
+            <span class="RedText">MOVIE</span>
+        </div>
+        
+    </div>
 </body>
 </html>

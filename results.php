@@ -24,16 +24,14 @@
             </div>
         </div>
     </div>
-    <div class="h-screen w-screen absolute" id="bgimg">
-        <?php
-        require("./php/MovieController.php");
-        $MC = new MovieController("localhost","fastmovie_renesse","root","");
-        $MovieName = $_GET['MovieName'];
-        $movies = $MC->SearchMovie($MovieName);
-        ?>
-        <div class="flex flex-wrap justify-between gap-4 pt-28 w-3/4 mx-auto">
-            <?= $MC->ShowMovies($movies); ?>
-        </div>
+    <?php
+    require("./php/MovieController.php");
+    $MC = new MovieController("localhost","fastmovie_renesse","root","");
+    $MovieName = $_GET['MovieName'];
+    $movies = $MC->SearchMovie($MovieName);
+    ?>
+    <div class="flex flex-wrap justify-between gap-4 pt-28 w-3/4 mx-auto">
+        <?= $MC->ShowMovies($movies); ?>
     </div>
-</body>
+    </body>
 </html>
