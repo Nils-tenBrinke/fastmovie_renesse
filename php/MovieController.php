@@ -22,13 +22,20 @@ class MovieController{
         $movies = $movies;
         foreach($movies as $movie){
             ?>
-            <div class="">
-                <a href="https://www.themoviedb.org/movie/<?= $movie->getID(); ?>"><img src="<?= $this->tmdb->getImageURL('w185') . $movie->getPoster();?>"/></a>
-
-            </div>
+            <form class="flex flex-col bg-red-200" method="GET">
+                <a href="movie.php?id=<?= $movie->getID(); ?>"><img src="<?= $this->tmdb->getImageURL('w185') . $movie->getPoster();?>"/></a>
+                <h3 class="movietitle text-2xl"><?= $movie->getTitle();?></h3>
+                <h6><?= $movie->getVoteAverage(); ?> / 10</h6>
+            </form>
             <?php
-            // echo $movie->getTitle() .' (<a href="https://www.themoviedb.org/movie/'. $movie->getID() .'">'. $movie->getID() .'</a>)';
         }
     }
+
+    function ShowSingleMovie($movieID){
+        $movieID = $movieID;
+        $movie = $this->tmdb->getMovie($movieID);
+        return $movie;
+    }
 }
+// <?php $movie->getTitle() .' (<a href="https://www.themoviedb.org/movie/'. $movie->getID() .'">'. $movie->getID() .'</a>)'
 ?>

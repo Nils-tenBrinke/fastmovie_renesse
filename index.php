@@ -10,41 +10,20 @@
     <title>FastMovie Renesse</title>
 </head>
 <body>
-    <div class="navigation w-screen h-auto px-8">
-        <div class="flex flex-row justify-between">
-            <a href="index.php" id="logo">
-                <span class="GrayText">FAST</span>
-                <span class="RedText">MOVIE</span>
-            </a>
-            <form method="GET" class="search-bar" autocomplete="off">
-                <input class="w-96" type="text" name="txtSearchMovie">
-                <input type="submit" value="Zoeken" name="btnSearchMovie" class="cta">
-            </form>
-
-
-            <?php
-            require("./php/MovieController.php");
-            if(isset($_GET['btnSearchMovie'])){
-                $MovieName = $_GET['txtSearchMovie'];
-                header("Location:results.php?MovieName=$MovieName");
-            }
-            ?>
-            <div class="nav-links">
-                <ul class="flex flex-row space-x-16">
-                    <li><a href="#!">over ons</a></li>
-                    <li><a href="#!">contact</a></li>
-                    <li><a href="#!" class="CTA">TICKETS</a></li>
-                </ul>
+    <?= include "php/_partials/_navigation.php"; ?>
+    <div class="flex flex-col w-3/4 mx-auto pt-56">
+        <div class="w-1/2">
+            <div class="">
+                <span class="GrayHead">FAST</span>
+                <span class="RedHead">MOVIE</span>
+            </div>
+            <div class="mb-16">
+                <span class="GrayHead">RENESSE</span>
+            </div>
+            <div class="">
+                <p class="HeaderP">We can fix anything. You don't want to kill all your dark areas they are very important. Maybe there's a happy little Evergreen that lives here. You don't have to be crazy to do this but it does help.</p>
             </div>
         </div>
-    </div>
-
-    <div class="flex w-3/4 mx-auto pt-56">
-        <div class="">
-            <span class="GrayText">FAST</span>
-            <span class="RedText">MOVIE</span>
-        </div>
-        
     </div>
 </body>
 </html>
