@@ -21,7 +21,7 @@
             <ul class="flex flex-row space-x-16">
                 <li><a href="#!">over ons</a></li>
                 <li><a href="#!">contact</a></li>
-                <li><a href="#!" class="CTA">TICKETS</a></li>
+                <li><a href="actualmovies.php" class="CTA">TICKETS</a></li>
             </ul>
         </div>
     </div>

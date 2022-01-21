@@ -36,6 +36,11 @@ class MovieController{
         $movie = $this->tmdb->getMovie($movieID);
         return $movie;
     }
+
+    function ShowActualMovies(){
+        $movies = $this->tmdb->nowPlayingMovies();
+        return $movies;
+    }
 }
 // <?php $movie->getTitle() .' (<a href="https://www.themoviedb.org/movie/'. $movie->getID() .'">'. $movie->getID() .'</a>)'
 ?>
