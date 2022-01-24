@@ -272,8 +272,7 @@ class TMDB{
 
 		$movies = array();
 
-		$result = $this->_call('movie/now-playing', 'page='. $page);
-
+		$result = $this->_call('movie/now_playing', 'page='. $page);
 		foreach($result['results'] as $data){
 		// foreach($result as $data){
 			$movies[] = new Movie($data);

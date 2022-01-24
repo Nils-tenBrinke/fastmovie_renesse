@@ -30,7 +30,7 @@ $myMovie = $MC->ShowSingleMovie($id);
             <div class="movieInfo">
                 <p><span><img src="./images/clock.svg" class="inline"></span> <?= $myMovie->get('runtime') ?> min</p>
                 <p><span><img src="./images/text.svg"></span> <?= $myMovie->get('original_language'); ?></p>
-                <p><span><img src="./images/star.svg"></span> <?= $myMovie->getVoteAverage(); ?> / 10 (<?= $myMovie->get('vote_count'); ?>)</p>
+                <p><span><img src="./images/star.svg"></span> <?= $myMovie->getVoteAverage(); ?> / 10 <span class="text-lg">(<?= $myMovie->get('vote_count'); ?>)</span></p>
             </div>
             <div class="">
                 <p class="HeaderP pt-24"><?= $myMovie->get('overview'); ?></p>

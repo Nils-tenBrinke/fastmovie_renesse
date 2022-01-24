@@ -9,7 +9,7 @@ class MovieController{
             //API implementeren en de waardes publiek stellen.
             include("./php/tmdb_api/tmdb-api.php");
             $apikey = "d3e3162392009d2e4475cde410afc226";
-            $this->tmdb = new TMDB($apikey, 'en', true);
+            $this->tmdb = new TMDB($apikey, 'en-US', true);
         }
         
     function SearchMovie($MovieName){
@@ -39,7 +39,15 @@ class MovieController{
 
     function ShowActualMovies(){
         $movies = $this->tmdb->nowPlayingMovies();
-        return $movies;
+        foreach($movies as $movie){
+            ?>
+            <form class="flex flex-col bg-red-200" method="GET">
+                <a href="movie.php?id=<?= $movie->getID(); ?>"><img src="<?= $this->tmdb->getImageURL('w185') . $movie->getPoster();?>"/></a>
+                <h3 class="movietitle text-2xl"><?= $movie->getTitle();?></h3>
+                <h6><?= $movie->getVoteAverage(); ?> / 10</h6>
+            </form>
+            <?php
+        }
     }
 }
 // <?php $movie->getTitle() .' (<a href="https://www.themoviedb.org/movie/'. $movie->getID() .'">'. $movie->getID() .'</a>)'

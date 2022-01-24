@@ -17,12 +17,12 @@
     ?>
     <div class="flex flex-wrap justify-between gap-4 pt-28 w-3/4 mx-auto">
         <span class="GrayHead">Actuele Films</span>
-        <div class="listofmovies bg-red-200">
+        <div class="listofmovies flex flex-wrap justify-between gap-4 pt-28 w-3/4 mx-auto">
             <?php
-            foreach($movies as $movie)
-                echo $movie;
+            foreach($movies as $movie){
+                ?><p><?= $MC->ShowActualMovies(); ?></p><?php
+            }
             ?>
-            <p>test</p>
         </div>
     </div>
 </body>
